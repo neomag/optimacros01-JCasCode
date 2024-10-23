@@ -19,20 +19,20 @@ jenkins:
         - name: "Default"
           home: "/usr/bin/git"
 
-  jobs:
-    - script: >
-        pipelineJob('example-pipeline') {
-          definition {
-            cps {
-              script('pipeline { agent any; stages { stage("Hello") { steps { echo "Hello, World!" } } } }')
-              sandbox()
-            }
-          }
-        }
+  # jobs:
+  #   - script: >
+  #       pipelineJob('example-pipeline') {
+  #         definition {
+  #           cps {
+  #             script('pipeline { agent any; stages { stage("Hello") { steps { echo "Hello, World!" } } } }')
+  #             sandbox()
+  #           }
+  #         }
+  #       }
 
   plugins:
     required:
       - configuration-as-code
       - git
-      - workflow-aggregator
+#      - workflow-aggregator
 
